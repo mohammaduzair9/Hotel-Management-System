@@ -1,0 +1,442 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report1" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="ef5b5ead-1311-4d11-bff9-0856ace8276a">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="table">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TH" mode="Opaque" backcolor="#5F9EA0">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_CH" mode="Opaque" backcolor="#BFFDFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[new Boolean($V{REPORT_COUNT}.intValue()%2==0)]]></conditionExpression>
+			<style backcolor="#EFFEFF"/>
+		</conditionalStyle>
+	</style>
+	<style name="table 1">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Crosstab Data Text" hAlign="Center"/>
+	<style name="table 2">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 2_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 2_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 2_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 3">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 3_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 3_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 3_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 4">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 4_TH" mode="Opaque" backcolor="#20B2AA">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 4_CH" mode="Opaque" backcolor="#BFFFFC">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 4_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<subDataset name="Table Dataset 1" uuid="e0f55b39-d974-41b6-8b5e-8661f688414e"/>
+	<subDataset name="Table Dataset 2" uuid="feed9bc2-7cca-488f-9c32-ab5d10284872"/>
+	<queryString>
+		<![CDATA[Select * from booking]]>
+	</queryString>
+	<field name="room_no" class="java.lang.Integer"/>
+	<field name="guest_id" class="java.lang.Integer"/>
+	<field name="persons" class="java.lang.String"/>
+	<field name="booking_date" class="java.lang.String"/>
+	<field name="arrival_date" class="java.lang.String"/>
+	<field name="dep_date" class="java.lang.String"/>
+	<field name="pick_up" class="java.lang.Boolean"/>
+	<field name="drop_off" class="java.lang.Boolean"/>
+	<field name="check_in" class="java.lang.Boolean"/>
+	<field name="check_out" class="java.lang.Boolean"/>
+	<field name="amount_rec" class="java.lang.Integer"/>
+	<field name="food_bill" class="java.lang.Integer"/>
+	<field name="transport_bill" class="java.lang.Integer"/>
+	<field name="event_bill" class="java.lang.Integer"/>
+	<field name="room_bill" class="java.lang.Integer"/>
+	<field name="guest_name" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="158" splitType="Stretch">
+			<textField pattern="dd MMMMM yyyy">
+				<reportElement x="423" y="58" width="132" height="30" uuid="76511a81-7627-4a26-8736-533474e62bf0"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="423" y="88" width="132" height="20" uuid="530a7025-afb9-435b-aa80-e4ffa324f7a0"/>
+				<textElement>
+					<font fontName="Verdana" size="12"/>
+				</textElement>
+				<text><![CDATA[Abc Road , Karachi]]></text>
+			</staticText>
+			<image>
+				<reportElement x="0" y="0" width="208" height="158" uuid="ffc927b8-b6bf-4cc0-9111-22b452511d66"/>
+				<imageExpression><![CDATA["C:\\Users\\Fawad\\Desktop\\HMS\\src\\admin\\bg_img\\lg.png"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="63" splitType="Stretch">
+			<staticText>
+				<reportElement mode="Opaque" x="159" y="0" width="289" height="45" forecolor="#FFFFFF" backcolor="#000033" uuid="db357630-ed42-45a8-8331-48137ae71e28"/>
+				<box>
+					<pen lineWidth="0.0" lineStyle="Solid"/>
+					<topPen lineWidth="0.0" lineStyle="Solid"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="GardensC" size="36"/>
+				</textElement>
+				<text><![CDATA[Customer Invoice]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="151" splitType="Stretch">
+			<staticText>
+				<reportElement x="27" y="29" width="100" height="29" uuid="c5e0ac14-3963-4b56-91b3-c530574ad5a3"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="GardensC" size="18"/>
+				</textElement>
+				<text><![CDATA[Guest ID]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="159" y="29" width="129" height="29" uuid="5c8259b5-4018-4543-b747-78ccc220bb91"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Verdana" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{guest_id}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="27" y="87" width="100" height="29" uuid="4c04a590-4da6-4db6-a42f-70e1c2754635"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="GardensC" size="18"/>
+				</textElement>
+				<text><![CDATA[Persons]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="162" y="87" width="126" height="29" uuid="6c488202-3bfc-4dae-90e7-d332b02e2e03"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Verdana" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{persons}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="27" y="58" width="100" height="29" uuid="a60d4e88-dc35-4248-9605-264dac19ab29"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="GardensC" size="18"/>
+				</textElement>
+				<text><![CDATA[Guest Name]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="159" y="58" width="129" height="29" uuid="3c565fe5-727a-407c-85bf-54c8a9cc288e"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Verdana" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{guest_name}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="27" y="116" width="100" height="29" uuid="bc936020-b4a8-4a72-b55e-694973386396"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="GardensC" size="18"/>
+				</textElement>
+				<text><![CDATA[Booking]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="162" y="116" width="126" height="29" uuid="9c30e4a6-b38c-4fbe-8470-061f1e053471"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Verdana" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{booking_date}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="309" y="0" width="98" height="29" uuid="12393b40-f314-4c34-869b-413493a1aada"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="GardensC" size="18"/>
+				</textElement>
+				<text><![CDATA[Arrival]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="428" y="0" width="127" height="29" uuid="a1f96392-8a12-46b2-b021-6e0d4e6dc4cd"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Verdana" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{arrival_date}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="309" y="29" width="98" height="29" uuid="6c0849e9-2b88-4ad1-9626-498d41125c24"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="GardensC" size="18"/>
+				</textElement>
+				<text><![CDATA[Departure]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="428" y="29" width="127" height="29" uuid="6411d0cc-041b-4f79-bba3-a892892e87b5"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Verdana" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{dep_date}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="27" y="0" width="100" height="29" uuid="5e8ca748-0494-4965-9d36-eb7d5d226115"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="GardensC" size="18"/>
+				</textElement>
+				<text><![CDATA[Room No]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="159" y="0" width="129" height="29" uuid="20289eed-9929-4175-b91f-d358fae5ae28"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Verdana" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{room_no}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="306" splitType="Stretch">
+			<line>
+				<reportElement x="0" y="12" width="555" height="1" uuid="6a68d0aa-de98-49d8-9c90-27118dba557c"/>
+			</line>
+			<line>
+				<reportElement x="2" y="53" width="553" height="1" uuid="34c5b7b0-3f02-45c7-96a4-e2341978059b"/>
+			</line>
+			<line>
+				<reportElement x="291" y="13" width="1" height="40" uuid="d4fce10b-2f7e-40d2-ab00-3d9b3c994e6d"/>
+			</line>
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="13" width="291" height="40" forecolor="#FFFFFF" backcolor="#666666" uuid="89a6e227-7557-44ed-bdf6-b13bf4dcdf3d"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="GardensC" size="24" isBold="false" isUnderline="false" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[Services ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="292" y="13" width="263" height="40" forecolor="#FFFFFF" backcolor="#666666" uuid="d256c3c4-ef93-4655-b18d-ac08001e45f9"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="GardensC" size="24" isBold="false" isUnderline="false" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[Amount]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="86" y="73" width="136" height="24" uuid="5a6c11ab-da8b-4595-b493-c3ef5f630d95"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Verdana" size="14" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Room ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="86" y="97" width="136" height="24" uuid="9649950b-4744-412f-ad84-250ab8c3ed78"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Verdana" size="14" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Transport ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="86" y="121" width="136" height="24" uuid="2772764c-0c67-447b-b446-b8076bc19b96"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Verdana" size="14" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Food Bill	]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="366" y="77" width="112" height="20" uuid="600f940c-4b5f-421c-b3cb-bf04d2c63d4e"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{room_bill}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="366" y="121" width="112" height="20" uuid="1ff8137b-b7da-4c1f-8567-747c183f6420"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{food_bill}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="366" y="97" width="112" height="20" uuid="522d168b-dda7-46fd-8b9a-5e9e33017de1"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{transport_bill}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="86" y="145" width="136" height="24" uuid="b5be4f53-f3d0-4817-ae01-72b5945a20e1"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Verdana" size="14" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Event Charges]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="366" y="141" width="112" height="20" uuid="c8bca53d-1ad6-492b-8b69-4250010a5b49"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{event_bill}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="3" y="187" width="552" height="1" uuid="b01d9386-149d-41e1-8037-d7ce90c57064"/>
+			</line>
+			<textField pattern=" #,##0">
+				<reportElement x="378" y="205" width="100" height="20" uuid="31776357-f80d-4e8f-91d2-1fe87b200fed"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Verdana" size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{food_bill}
++$F{transport_bill}+$F{event_bill}+$F{room_bill}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="266" y="205" width="100" height="20" uuid="6ffd8e6f-27c0-4047-851b-7b638f9622d2"/>
+				<textElement>
+					<font fontName="GardensC" size="14"/>
+				</textElement>
+				<text><![CDATA[Total Bill]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="266" y="240" width="100" height="20" uuid="dd88ddf1-71fb-4cdf-b5af-4ca551ce28a6"/>
+				<textElement>
+					<font fontName="GardensC" size="14"/>
+				</textElement>
+				<text><![CDATA[Amount Rec]]></text>
+			</staticText>
+			<textField pattern=" (#,##0)">
+				<reportElement x="378" y="240" width="100" height="20" forecolor="#990000" uuid="009e4de0-51c7-4a28-be5d-95a9877ff3a8"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Verdana" size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{amount_rec}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="266" y="280" width="100" height="20" uuid="499f91a9-4497-4ab5-9152-409273aed941"/>
+				<textElement>
+					<font fontName="GardensC" size="14"/>
+				</textElement>
+				<text><![CDATA[Bill Payable]]></text>
+			</staticText>
+			<textField pattern="Rs #,##0">
+				<reportElement x="378" y="280" width="100" height="20" forecolor="#006600" uuid="e31a9dc9-8109-470c-aac1-d7882423aa29"/>
+				<box leftPadding="0">
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+					<topPen lineWidth="1.0" lineStyle="Solid"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Verdana" size="14" isBold="true" isUnderline="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{food_bill}
++$F{transport_bill}+$F{event_bill}+$F{room_bill}-$F{amount_rec}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="35" splitType="Stretch">
+			<staticText>
+				<reportElement x="37" y="0" width="100" height="20" uuid="8daddbeb-ab84-445e-afd9-1f6ec35ff28c"/>
+				<textElement>
+					<font fontName="GardensC" size="20"/>
+				</textElement>
+				<text><![CDATA[Signature]]></text>
+			</staticText>
+			<line>
+				<reportElement x="149" y="20" width="117" height="1" uuid="00dc436d-9f47-4488-a7cf-e26f654399de"/>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="555" height="54" forecolor="#000033" uuid="e41b4e2a-4a04-4d5c-8b6f-4e1b69c7f972"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="GardensC" size="14"/>
+				</textElement>
+				<text><![CDATA[Thank You ! for being our guests ! We look forward accomodating you again in the Future ]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
