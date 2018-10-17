@@ -1,0 +1,20 @@
+
+How to Run Project ......?
+
+
+1- Set Your resolution to 1280 x 1024 (Recomended)
+
+2- Set Your Windows 7 Theme To Aero Themes (Default)
+(note In Windows 7 Basic Theme The login screen will not Work)
+
+3-Install all given fonts which are used in project
+
+4-Attach Data Base to sql server
+
+5-Change the Server name In DatabaseManager Class
+
+6-Attach All Jar files From  lib and dist folder in jasper folder
+
+7-for DB Images Just copy paste  db_images folder on desktop 
+
+8-Just Click Run and Enjoy ...:)
